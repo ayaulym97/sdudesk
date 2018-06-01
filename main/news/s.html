@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+  <title>Untitled</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+  .news  {
+     border: 2px solid #191970
+  }
+
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script>
+$(function() {
+    $("button").click(function() {
+        var $grupp = $.makeArray($(".alt"));
+        $grupp.sort(function(a, b) {
+            var A = parseInt($(a).find("h1").text());
+            var B = parseInt($(b).find("h1").text());
+            return A - B
+        });
+        $.each($grupp, function(indx, el) {
+            $(el).appendTo($(".news").eq(indx / 3 | 0))
+        })
+    })
+});
+  </script>
+</head>
+
+<body>  <button>click</button>
+<div id="content">
+      <div class="news">
+          <div class="alt">
+                  <h1>1</h1>
+                  <p>Текст1</p>
+          </div>
+          <div class="alt">
+                  <h1>3</h1>
+                  <p>Текст3</p>
+          </div>
+          <div class="alt">
+                  <h1>3</h1>
+                  <p>Текст3</p>
+          </div>
+      </div>
+      <div class="news">
+          <div class="alt">
+                  <h1>2</h1>
+                  <p>Текст2</p>
+          </div>
+          <div class="alt">
+                  <h1>4</h1>
+                  <p>Текст4</p>
+          </div>
+          <div class="alt">
+                  <h1>6</h1>
+                  <p>Текст6</p>
+          </div>
+      </div>
+      <div class="news">
+    <div class="alt">
+            <h1>5</h1>
+            <p>Текст5</p>
+    </div>
+</div>
+</div>
+<script>
+
+</script>
+
+
+
+</body>
+
+</html>
